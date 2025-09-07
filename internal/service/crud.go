@@ -47,21 +47,7 @@ func (s *CrudService) Update(ctx context.Context, in *v1.UpdateRequest) (*v1.Upd
 	}, nil
 }
 
-func (s *CrudService) ListAll(ctx context.Context, in *v1.ListRequest) (*v1.ListReply, error) {
-	ps, err := s.uc.ListAll(ctx)
-	if err != nil {
-		return nil, err
-	}
-	reply := &v1.ListReply{}
-	for _, p := range ps {
-		reply.Users = append(reply.Users, &v1.User{
-			Id:   p.Id,
-			Name: p.Name,
-			Pwd:  p.Pwd,
-		})
-	}
-	return reply, nil
-}
+
 
 func (s *CrudService) FindByName(ctx context.Context, in *v1.FindRequest) (*v1.FindReply, error) {
 	g, err := s.uc.FindByName(ctx, in.Name)

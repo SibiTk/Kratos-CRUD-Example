@@ -7,8 +7,9 @@ server:
     timeout: 1s
 data:
   database:
-    driver: mysql
-    source: root:20010215@tcp(127.0.0.1:3306)/helloworld
+    driver: postgres
+    source: postgres://sibi.t:1323@localhost:5432/fintech?sslmode=disable
+    
   redis:
     addr: 127.0.0.1:6379
     read_timeout: 0.2s

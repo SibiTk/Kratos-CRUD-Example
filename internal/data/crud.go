@@ -19,7 +19,7 @@ func NewCrudRepo(data *Data, logger log.Logger) biz.CrudRepo {
 	return &CrudRepo{
 		data:  data,
 		log:   log.NewHelper(logger),
-		table: data.db.Table("user"),
+		table: data.db.Table("fintech"),
 	}
 }
 

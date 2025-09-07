@@ -40,9 +40,6 @@ func (uc *CrudUsecase) FindByName(ctx context.Context, name string) (*User, erro
 	return uc.repo.FindByName(ctx, name)
 }
 
-func (uc *CrudUsecase) ListAll(ctx context.Context) ([]*User, error) {
-	return uc.repo.ListAll(ctx)
-}
 
 func (uc *CrudUsecase) Delete(ctx context.Context, id int64) (*User, error) {
 	return uc.repo.Delete(ctx, id)

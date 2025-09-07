@@ -3,7 +3,7 @@ package data
 import (
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"shop/internal/conf"
 )
@@ -16,7 +16,7 @@ type Data struct {
 
 func NewData(c *conf.Data, logger log.Logger) (*Data, func(), error) {
 
-	db, err := gorm.Open(mysql.Open(c.GetDatabase().GetSource()), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(c.GetDatabase().GetSource()), &gorm.Config{})
 	if err != nil {
 		return nil, nil, err
 	}
